@@ -1,25 +1,41 @@
 #include <iostream>
-
 using namespace std;
 
-    //Write your countBits function here
-int countBits(int x)
-{
-  int count=0;
-    while(x!=0)
-    {
-        if(x&1)
-        {
-            count+=1;
-        }
-        x=x>>1;
-    }
-    return count;
-}
-
 int main() {
-    int n;
-    cin >> n;
-    cout<<countBits(n);
-    return 0;
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+	    int sa,sb,sc;
+	    int arr[3];
+	    for(int i=0;i<3;i++)
+	    {
+	        cin>>arr[i];
+	    }
+	    int min =arr[0];
+	    for(int i=0;i<3;i++)
+	    {
+	        if(arr[i]<min)
+	        {
+	            min=arr[i];
+	        }
+	    }
+      cout<<min<<endl;
+
+	    if(min==arr[2])
+	    {
+	        cout<<"Alice"<<endl;
+	    }
+
+	    else if(min==arr[1])
+	    {
+	        cout<<"Bob"<<endl;
+	    }
+	    else
+	    {
+	        cout<<"Draw"<<endl;
+	    }
+	}
+	return 0;
 }

@@ -16,6 +16,5 @@ int main()
 {
   int n=3;
   tree(n);
-
   return 0;
 }

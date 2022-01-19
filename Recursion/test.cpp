@@ -1,32 +1,38 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
+
 int main() {
-	// your code goes here
-	int n;
-  cin>>n;
-	int arr[n];
-	for(int i=0;i<n;i++)
-	{
-	    cin>>arr[i];
-	}
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int n;
+    cin>>n;
+    vector<int>v;
 
-	for(int i=0;i<n;i++)
-	{
-	    for(int j=i+1;j<n;j++)
-      {
-        if(arr[i]>arr[j])
-        {
-          int temp=arr[i];
-          arr[i]=arr[j];
-          arr[j]=temp;
-        }
-      }
-	}
+    for(int i=0;i<n;i++)
+    {
+        cin>>i;
+        v.push_back(i);
+    }
 
-	for(int i=0;i<n;i++)
-	{
-	    cout<<arr[i]<<endl;
-	}
-	return 0;
+    int x,y,z;
+    cin>>x;
+    // int x1=x-1;
+    cin>>y>>z;
+    // int z1=z-1;
+
+    v.erase(v.begin()+x-1);
+    v.erase(v.begin()+y-1,v.end()+z-1);
+
+    for(int j=0;j<v.size();j++)
+    {
+        cout<<v.at(j)<<" ";
+    }
+
+
+
+    return 0;
 }
